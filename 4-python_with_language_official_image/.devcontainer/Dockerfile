@@ -1,6 +1,6 @@
-# DevContainer公式イメージの利用
-# https://github.com/devcontainers/images/tree/main/src/python
-FROM mcr.microsoft.com/devcontainers/python:3.13
+# DockerHubの公式イメージを利用
+# https://hub.docker.com/_/python
+FROM python:3.13.7
 
 # uv のインストール
 COPY --from=ghcr.io/astral-sh/uv:0.8.22 /uv /uvx /bin/

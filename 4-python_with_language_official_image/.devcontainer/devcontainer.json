@@ -1,9 +1,10 @@
 {
-  "name": "Debian",
   "dockerComposeFile": "docker-compose.yaml",
   "service": "dev",
   "workspaceFolder": "/workspace",
-  "features": {},
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {}
+  },
   "customizations": {
     "vscode": {
       "extensions": [

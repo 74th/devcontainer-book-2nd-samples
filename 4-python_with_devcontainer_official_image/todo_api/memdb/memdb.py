@@ -30,7 +30,7 @@ class MemDB:
     def search_unfinished(self) -> list[Task]:
         return [copy(task) for task in self._tasks if not task["done"]]
 
-    def update(self, task:Task):
+    def update(self, task: Task) -> None:
         assert task["id"] is not None
         self._tasks[task["id"]] = copy(task)
 

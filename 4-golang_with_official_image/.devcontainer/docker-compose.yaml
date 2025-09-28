@@ -5,6 +5,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ..:/workspace:cached
+      # cacheをコンテナ外に永続化
       - ~/.cache/devcontainer/go-cache-go-build:/home/vscode/.cache/go-build
+      # gomodのキャッシュを永続化
       - ~/.cache/devcontainer/go-gomod:/go/pkg/mod
     command: /bin/sh -c "while sleep 1000; do :; done"

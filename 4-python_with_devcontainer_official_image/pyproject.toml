@@ -1,0 +1,14 @@
+[project]
+name = "005-agent-with-mcp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "flask>=3.1.1",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.13.2",
+]

@@ -1,0 +1,10 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspace:cached
+      # uvのキャッシュを永続化
+      - ~/.cache/devcontainer/python-uv-cache:/var/uv/cache:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"

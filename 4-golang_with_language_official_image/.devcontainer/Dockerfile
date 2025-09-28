@@ -2,21 +2,10 @@
 # https://hub.docker.com/_/golang
 FROM golang:1.25.1-trixie
 
-# 非rootユーザの引数
-ARG USERNAME=vscode
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
-
-# 非rootユーザの追加
-RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
-
 # マウント時、親ディレクトリが作られていないと、root権限で作成されてしまうため、事前に作成しておく
 RUN mkdir -p /home/vscode/.cache/go-build /go/pkg && \
+    chown -R 1000:1000 /home/vscode && \
     chmod 777 -R /home/vscode/.cache /go/pkg
-
-# ユーザの切り替え
-USER $USERNAME
 
 # 各ツールのインストール
 RUN go install golang.org/x/tools/gopls@latest; \

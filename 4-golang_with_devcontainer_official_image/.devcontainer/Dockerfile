@@ -1,4 +1,4 @@
-# 公式イメージの利用
+# DevContainer公式イメージの利用
 # https://github.com/devcontainers/images/tree/main/src/go
 FROM mcr.microsoft.com/devcontainers/go:1.25
 

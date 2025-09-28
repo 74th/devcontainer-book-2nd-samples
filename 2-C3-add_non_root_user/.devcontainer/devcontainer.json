@@ -1,0 +1,8 @@
+{
+    "dockerFile": "Dockerfile",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {}
+    },
+    "containerUser": "vscode",
+    "postCreateCommand": ".devcontainer/postCreateCommand.sh"
+}

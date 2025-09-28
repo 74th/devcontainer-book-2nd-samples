@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/74th/devcontainer-book-2nd-samples/4-golang_with_official_image/src/domain/entity"
+	"github.com/74th/devcontainer-book-2nd-samples/4-golang_with_devcontainer_official_image/src/domain/entity"
 )
 
 var TaskNotFoundError = errors.New("TaskNotFoundError")

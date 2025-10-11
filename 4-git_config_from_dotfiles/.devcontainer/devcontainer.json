@@ -1,0 +1,4 @@
+{
+    "name": "git-config-from-dotfiles",
+    "image": "mcr.microsoft.com/devcontainers/base:bullseye"
+}

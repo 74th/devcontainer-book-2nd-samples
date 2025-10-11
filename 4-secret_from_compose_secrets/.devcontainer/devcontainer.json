@@ -1,0 +1,22 @@
+{
+    "name": "secret-from-compose-secrets",
+    "dockerComposeFile": "./compose.yaml",
+    "service": "dev",
+    "workspaceFolder": "/workspace",
+    "features": {
+        "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
+    },
+    "remoteEnv": {
+        "CLAUDE_CODE_USE_BEDROCK": "1",
+        "AWS_REGION": "ap-northeast-1"
+    },
+    "initializeCommand": ".devcontainer/initializeCommand.sh",
+    "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "Anthropic.claude-code"
+            ]
+        }
+    }
+}

@@ -1,0 +1,14 @@
+secrets:
+  bedrock_api_key:
+    file: ~/.secrets/bedrock_api_key
+
+services:
+  dev:
+    image: mcr.microsoft.com/devcontainers/base:bullseye
+    command: sleep infinity
+    volumes:
+      - ..:/workspace:cached
+    secrets:
+      - source: bedrock_api_key
+        target: bedrock_api_key
+        mode: 0444

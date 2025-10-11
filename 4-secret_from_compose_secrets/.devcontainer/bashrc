@@ -1,0 +1,2 @@
+# bedrock のシークレットを環境変数で読み込む
+export AWS_BEARER_TOKEN_BEDROCK=$(cat /run/secrets/bedrock_api_key)

@@ -12,7 +12,7 @@
         "--env-file",
         ".devcontainer/devcontainer.env"
     ],
-    "initializeCommand": "uv run .devcontainer/generate_bedrock_shortterm_api_key_to_stdout.py",
+    "initializeCommand": "uv run .devcontainer/generate_bedrock_shortterm_api_key_to_envfile.py",
     "customizations": {
         "vscode": {
             "extensions": [

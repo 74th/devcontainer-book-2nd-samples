@@ -29,7 +29,11 @@ if (secretPath) {
   process.exit(1);
 }
 
-// === 2. settings.json 読み込み ===
+// === 2. AWS_REGION を取得 ===
+const region = process.env.AWS_REGION?.trim() || "ap-northeast-1";
+console.log(`🌏 Using AWS_REGION=${region}`);
+
+// === 3. settings.json 読み込み ===
 let text = "{}";
 if (existsSync(settingsPath)) {
   text = readFileSync(settingsPath, "utf8");
@@ -37,14 +41,14 @@ if (existsSync(settingsPath)) {
 
 const json = parse(text, [], { allowTrailingComma: true, disallowComments: false }) ?? {};
 
-// === 3. claude-code.environmentVariables の更新内容 ===
+// === 4. claude-code.environmentVariables の更新内容 ===
 const envVars = [
   { name: "CLAUDE_CODE_USE_BEDROCK", value: "1" },
   { name: "AWS_BEARER_TOKEN_BEDROCK", value: token },
-  { name: "AWS_REGION", value: "ap-northeast-1" }
+  { name: "AWS_REGION", value: region }
 ];
 
-// === 4. 差分生成と適用 ===
+// === 5. 差分生成と適用 ===
 const edits = modify(
   text,
   ["claude-code.environmentVariables"],

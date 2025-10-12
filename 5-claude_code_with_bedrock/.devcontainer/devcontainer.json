@@ -10,6 +10,7 @@
     },
     "initializeCommand": ".devcontainer/initializeCommand.sh",
     "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+    "postStartCommand": ".devcontainer/postStartCommand.sh",
     "mounts": [
         "source=${localEnv:HOME}/.secrets/bedrock_api_key,target=/run/secrets/bedrock_api_key,type=bind,consistency=cached",
     ],

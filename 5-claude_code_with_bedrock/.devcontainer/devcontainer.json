@@ -1,0 +1,23 @@
+{
+    "name": "git-config-from-dotfiles",
+    "image": "mcr.microsoft.com/devcontainers/base:bullseye",
+    "features": {
+        "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
+    },
+    "remoteEnv": {
+        "CLAUDE_CODE_USE_BEDROCK": "1",
+        "AWS_REGION": "ap-northeast-1"
+    },
+    "initializeCommand": ".devcontainer/initializeCommand.sh",
+    "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+    "mounts": [
+        "source=${localEnv:HOME}/.secrets/bedrock_api_key,target=/run/secrets/bedrock_api_key,type=bind,consistency=cached",
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "Anthropic.claude-code"
+            ]
+        }
+    }
+}

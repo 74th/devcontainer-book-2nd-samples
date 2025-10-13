@@ -6,11 +6,20 @@ services:
     command: sleep infinity
     volumes:
       - ..:/workspace:cached
+    networks:
+      - dev-network
   mysql:
     image: mysql:8.0
     environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_USER: mysql
       MYSQL_PASSWORD: password
       MYSQL_DATABASE: sampledb
     ports:
       - "3306:3306"
+    networks:
+      - dev-network
+
+networks:
+  dev-network:
+    driver: bridge

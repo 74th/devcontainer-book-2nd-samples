@@ -2,5 +2,13 @@
     "name": "network-dedicated-container",
     "dockerComposeFile": "./compose.yaml",
     "service": "dev",
-    "workspaceFolder": "/workspace"
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python"
+            ]
+        }
+    }
+
 }

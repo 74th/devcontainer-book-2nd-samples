@@ -6,11 +6,11 @@ import re
 
 class TestConnection(unittest.TestCase):
     def test_sidecar(self):
-        with urllib.request.urlopen("http://sidecar/", timeout=3) as response:
+        with urllib.request.urlopen("http://sidecar/", timeout=2) as response:
             self.assertEqual(response.status, 200)
 
     def test_host_docker_internal(self):
-        with urllib.request.urlopen("http://host.docker.internal:18080/", timeout=3) as response:
+        with urllib.request.urlopen("http://host.docker.internal:18080/", timeout=2) as response:
             self.assertEqual(response.status, 200)
 
     def test_ip_gateway(self):
@@ -22,15 +22,19 @@ class TestConnection(unittest.TestCase):
         else:
             self.fail("Gateway IP not found in ip route output")
 
-        with urllib.request.urlopen(f"http://{gateway_ip}:18080/", timeout=3) as response:
+        with urllib.request.urlopen(f"http://{gateway_ip}:18080/", timeout=2) as response:
             self.assertEqual(response.status, 200)
 
     def test_host_ip(self):
-        with urllib.request.urlopen("http://192.168.1.191:18080/", timeout=3) as response:
+        with urllib.request.urlopen("http://192.168.1.191:18080/", timeout=2) as response:
             self.assertEqual(response.status, 200)
 
     def test_github(self):
-        with urllib.request.urlopen("https://github.com/74th.keys/", timeout=3) as response:
+        with urllib.request.urlopen("https://github.com/74th.keys/", timeout=2) as response:
+            self.assertEqual(response.status, 200)
+
+    def test_aws(self):
+        with urllib.request.urlopen("http://checkip.amazonaws.com", timeout=2) as response:
             self.assertEqual(response.status, 200)
 
 

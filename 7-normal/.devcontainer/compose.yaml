@@ -6,14 +6,5 @@ services:
     command: sleep infinity
     volumes:
       - ..:/workspace:cached
-    networks:
-      - dev-network
   sidecar:
     image: nginx
-    networks:
-      - dev-network
-
-networks:
-  dev-network:
-    driver: bridge
-    internal: true

@@ -1,13 +1,12 @@
 import urllib.request
 import subprocess
 import unittest
-import time
 import re
 
 
 class TestConnection(unittest.TestCase):
     def test_sidecar(self):
-        with urllib.request.urlopen("http://sidecar:18080/") as response:
+        with urllib.request.urlopen("http://sidecar/") as response:
             self.assertEqual(response.status, 200)
 
     def test_host_docker_internal(self):

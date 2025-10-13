@@ -10,5 +10,4 @@
             ]
         }
     }
-    // "postCreateCommand": ".devcontainer/postCreateCommand.sh"
 }

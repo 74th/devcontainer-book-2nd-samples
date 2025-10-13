@@ -1,3 +1,3 @@
 #!/bin/bash
 uv sync
-uv run -m pytest --timeout=10 --timeout-method=thread
+uv run -m unittest test_main -v

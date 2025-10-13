@@ -8,15 +8,10 @@ services:
       - ..:/workspace:cached
     networks:
       - dev-network
-  mysql:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_USER: mysql
-      MYSQL_PASSWORD: password
-      MYSQL_DATABASE: sampledb
+  sidecar:
+    image: nginx
     ports:
-      - "3306:3306"
+      - "80:80"
     networks:
       - dev-network
 

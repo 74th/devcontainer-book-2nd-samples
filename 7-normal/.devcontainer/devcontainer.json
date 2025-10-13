@@ -1,8 +1,8 @@
 {
-    "name": "network-dedicated-container",
-    "dockerComposeFile": "./compose.yaml",
-    "service": "dev",
-    "workspaceFolder": "/workspace",
+    "name": "normal",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
     "customizations": {
         "vscode": {
             "extensions": [

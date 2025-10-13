@@ -10,6 +10,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY ./init.sh ./allow_domains.txt /root
 
-USER 0
+USER root
+
+# sudoを削除
+RUN rm /etc/sudoers.d/vscode
 
 ENTRYPOINT /bin/bash /root/init.sh && sleep infinity

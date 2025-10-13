@@ -3,7 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: sleep infinity
     volumes:
       - ..:/workspace:cached
     cap_add:

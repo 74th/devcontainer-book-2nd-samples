@@ -25,5 +25,14 @@ class TestConnection(unittest.TestCase):
         with urllib.request.urlopen(f"http://{gateway_ip}:18080/") as response:
             self.assertEqual(response.status, 200)
 
+    def test_host_ip(self):
+        with urllib.request.urlopen("http://192.168.1.191:18080/") as response:
+            self.assertEqual(response.status, 200)
+
+
+    def test_github(self):
+        with urllib.request.urlopen("https://github.com/74th.keys/") as response:
+            self.assertEqual(response.status, 200)
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

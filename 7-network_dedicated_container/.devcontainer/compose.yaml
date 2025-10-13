@@ -1,0 +1,16 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sleep infinity
+    volumes:
+      - ..:/workspace:cached
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: sampledb
+    ports:
+      - "3306:3306"

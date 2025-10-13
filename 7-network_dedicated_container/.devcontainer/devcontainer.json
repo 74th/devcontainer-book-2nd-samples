@@ -1,0 +1,6 @@
+{
+    "name": "network-dedicated-container",
+    "dockerComposeFile": "./compose.yaml",
+    "service": "dev",
+    "workspaceFolder": "/workspace"
+}

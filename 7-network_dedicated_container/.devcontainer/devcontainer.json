@@ -9,6 +9,6 @@
                 "ms-python.python"
             ]
         }
-    },
-    "postCreateCommand": ".devcontainer/postCreateCommand.sh"
+    }
+    // "postCreateCommand": ".devcontainer/postCreateCommand.sh"
 }

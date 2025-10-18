@@ -1,0 +1,6 @@
+{
+  "enabledMcpjsonServers": [
+    "container-use"
+  ],
+  "enableAllProjectMcpServers": true
+}

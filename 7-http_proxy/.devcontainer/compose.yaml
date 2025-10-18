@@ -31,7 +31,7 @@ services:
     # 自作設定をマウント
     volumes:
       - ./squid.conf:/etc/squid/squid.conf:ro
-      - ./allow_domains.txt:/etc/squid/allow_domains.txt:ro
+      - ./whitelist.txt:/etc/squid/whitelist.txt:ro
       - squid-cache:/var/spool/squid
       - squid-logs:/var/log/squid
     # dev からは dev-network でアクセス、外部へは egress で出る

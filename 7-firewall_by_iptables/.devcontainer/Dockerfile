@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   aggregate \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-COPY ./init.sh ./allow_domains.txt /root
+COPY ./init.sh ./whitelist.txt /root
 
 USER root
 

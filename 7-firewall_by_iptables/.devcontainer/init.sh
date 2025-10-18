@@ -87,7 +87,7 @@ resolve_and_add_domain() {
 }
 
 # Resolve and add allowed domains from file
-DOMAINS_FILE="/root/allow_domains.txt"
+DOMAINS_FILE="/root/whitelist.txt"
 if [ -f "$DOMAINS_FILE" ]; then
     echo "Reading domains from $DOMAINS_FILE..."
     while IFS= read -r domain; do

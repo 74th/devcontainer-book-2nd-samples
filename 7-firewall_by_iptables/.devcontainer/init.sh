@@ -145,6 +145,10 @@ iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 # Then allow only specific outbound traffic to allowed domains
 iptables -A OUTPUT -m set --match-set allowed-domains dst -j ACCEPT
 
+# （追記）ドロップしたIPアドレスをrecentモジュールで記録するルールを追加
+iptables -A OUTPUT -m recent --name dropped_out --rdest --set
+iptables -A OUTPUT -j DROP
+
 echo "Firewall configuration complete"
 echo "Verifying firewall rules..."
 if curl --connect-timeout 5 https://example.com >/dev/null 2>&1; then

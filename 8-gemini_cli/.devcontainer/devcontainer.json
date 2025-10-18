@@ -1,5 +1,5 @@
 {
-    "name": "caludecode",
+    "name": "gemini-cli",
     "build": {
         "dockerfile": "./Dockerfile",
     },

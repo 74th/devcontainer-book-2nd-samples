@@ -1,20 +1,22 @@
 {
-    "name": "gemini-cli",
-    "build": {
-        "dockerfile": "./Dockerfile",
-    },
-    "features": {},
-    "remoteEnv": {},
-    "mounts": [
-        "source=${localEnv:HOME}/.llm/gemini/.gemini,target=/home/node/.gemini,type=bind,consistency=cached",
-        "source=${localEnv:HOME}/.llm/gemini/.config/configstore,target=/home/node/.config/configstore,type=bind,consistency=cached"
-    ],
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                // "Google.geminicodeassist",
-                "Google.gemini-cli-vscode-ide-companion"
-            ]
-        }
+  "name": "gemini-cli",
+  "build": {
+    "dockerfile": "./Dockerfile",
+  },
+  "remoteEnv": {
+    "PATH": "/home/vscode/npm/bin:${containerEnv:PATH}"
+  },
+  "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+  "mounts": [
+    "source=${localEnv:HOME}/.llm/gemini/.gemini,target=/home/vscode/.gemini,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.llm/gemini/.config/configstore,target=/home/vscode/.config/configstore,type=bind,consistency=cached"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // "Google.geminicodeassist",
+        "Google.gemini-cli-vscode-ide-companion"
+      ]
     }
+  }
 }

@@ -3,9 +3,6 @@
   "build": {
     "dockerfile": "./Dockerfile",
   },
-  "remoteEnv": {
-    "PATH": "/home/vscode/npm/bin:${containerEnv:PATH}"
-  },
   "postCreateCommand": ".devcontainer/postCreateCommand.sh",
   "mounts": [
     "source=${localEnv:HOME}/.llm/gemini/.gemini,target=/home/vscode/.gemini,type=bind,consistency=cached",

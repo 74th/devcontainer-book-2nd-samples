@@ -1,18 +1,16 @@
 {
-    "name": "copilot-cli",
-    "build": {
-        "dockerfile": "./Dockerfile"
-    },
-    "features": {},
-    "remoteEnv": {},
-    "mounts": [
-        "source=${localEnv:HOME}/.llm/copilot/.copilot,target=/home/node/.copilot,type=bind,consistency=cached",
-        "source=${localEnv:HOME}/.llm/copilot/.config/configstore,target=/home/node/.config/configstore,type=bind,consistency=cached"
-    ],
-    "customizations": {
-        "vscode": {
-            "extensions": [
-            ]
-        }
+  "name": "copilot-cli",
+  "build": {
+    "dockerfile": "./Dockerfile"
+  },
+  "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+  "mounts": [
+    "source=${localEnv:HOME}/.llm/copilot/.copilot,target=/home/node/.copilot,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.llm/copilot/.config/configstore,target=/home/node/.config/configstore,type=bind,consistency=cached"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": []
     }
+  }
 }

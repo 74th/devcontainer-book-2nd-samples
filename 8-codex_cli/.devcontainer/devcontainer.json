@@ -1,18 +1,17 @@
 {
-    "name": "codex-cli",
-    "build": {
-        "dockerfile": "./Dockerfile"
-    },
-    "features": {},
-    "remoteEnv": {},
-    "mounts": [
-        "source=${localEnv:HOME}/.llm/codex/.codex,target=/home/node/.codex,type=bind,consistency=cached",
-    ],
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "openai.chatgpt"
-            ]
-        }
+  "name": "codex-cli",
+  "build": {
+    "dockerfile": "./Dockerfile"
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.llm/codex/.codex,target=/home/vscode/.codex,type=bind,consistency=cached"
+  ],
+  "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "openai.chatgpt"
+      ]
     }
+  }
 }

@@ -1,0 +1,55 @@
+{
+  "name": "caludecode",
+  "image": "mcr.microsoft.com/devcontainers/base:bullseye",
+  "features": {
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.llm/claude/.claude.json,target=/home/vscode/.claude.json,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.llm/claude/.claude,target=/home/vscode/.claude,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.llm/claude/vertexai_credentials.json,target=/run/secrets/vertexai_credentials.json,type=bind,consistency=cached"
+  ],
+  "remoteEnv": {
+    "CLAUDE_CODE_USE_VERTEX": "1",
+    "CLOUD_ML_REGION": "global",
+    "DISABLE_PROMPT_CACHING": "1",
+    "VERTEX_REGION_CLAUDE_4_5_SONNET": "us-east5",
+    "ANTHROPIC_MODEL": "claude-sonnet-4-5@20250929",
+    "GOOGLE_APPLICATION_CREDENTIALS": "/run/secrets/vertexai_credentials.json"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Anthropic.claude-code"
+      ],
+      "settings": {
+        "claude-code.environmentVariables": [
+          {
+            "name": "CLAUDE_CODE_USE_VERTEX",
+            "value": "1"
+          },
+          {
+            "name": "CLOUD_ML_REGION",
+            "value": "global"
+          },
+          {
+            "name": "DISABLE_PROMPT_CACHING",
+            "value": "1"
+          },
+          {
+            "name": "VERTEX_REGION_CLAUDE_4_5_SONNET",
+            "value": "us-east5"
+          },
+          {
+            "name": "ANTHROPIC_MODEL",
+            "value": "claude-sonnet-4-5@20250929"
+          },
+          {
+            "name": "GOOGLE_APPLICATION_CREDENTIALS",
+            "value": "/run/secrets/vertexai_credentials.json"
+          }
+        ]
+      }
+    }
+  }
+}

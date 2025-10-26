@@ -2,9 +2,13 @@
 # https://hub.docker.com/_/golang
 FROM golang:1.25.1-trixie
 
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
 # マウント時、親ディレクトリが作られていないと、root権限で作成されてしまうため、事前に作成しておく
 RUN mkdir -p /home/vscode/.cache/go-build /go/pkg && \
-    chown -R 1000:1000 /home/vscode && \
+    chown -R $USER_UID:$USER_GID /home/vscode && \
     chmod 777 -R /home/vscode/.cache /go/pkg
 
 # 各ツールのインストール

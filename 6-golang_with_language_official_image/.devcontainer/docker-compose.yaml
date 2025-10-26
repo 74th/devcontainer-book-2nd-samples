@@ -6,7 +6,8 @@ services:
     volumes:
       - ..:/workspace:cached
       # ビルドキャッシュをコンテナ外に永続化
-      - ~/.cache/devcontainer/go-cache-go-build:/home/vscode/.cache/go-build
+      - ~/.cache/devcontainer/go/cache-go-build:/home/vscode/.cache/go-build
       # gomodのキャッシュを永続化
-      - ~/.cache/devcontainer/go-gomod:/go/pkg/mod
+      - ~/.cache/devcontainer/go/pkg-mod:/go/pkg/mod
+      - ~/.cache/devcontainer/go/pkg-submdb:/go/pkg/sumdb
     command: /bin/sh -c "while sleep 1000; do :; done"

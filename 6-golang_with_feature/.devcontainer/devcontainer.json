@@ -1,0 +1,23 @@
+{
+  "dockerComposeFile": "docker-compose.yaml",
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  "features": {
+    "ghcr.io/devcontainers/features/go": {
+      "version": "1.25",
+      "golangciLintVersion": "1.64.8"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.go",
+        "humao.rest-client",
+        "EditorConfig.EditorConfig"
+      ]
+    }
+  },
+  "initializeCommand": ".devcontainer/initializeCommand.sh",
+  "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+  "remoteUser": "vscode"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "4-override-setting",
+    "dockerComposeFile": "compose.yml",
+    "service": "dev",
+    "workspaceFolder": "/workspace",
+    "remoteUser": "vscode"
+}

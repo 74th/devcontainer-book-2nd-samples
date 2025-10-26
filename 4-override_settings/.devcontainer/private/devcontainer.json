@@ -1,0 +1,7 @@
+{
+    "name": "4-override-private",
+    "dockerComposeFile": ["../compose.yml", "./compose.override.yml"],
+    "service": "dev",
+    "workspaceFolder": "/workspace",
+    "remoteUser": "vscode"
+}

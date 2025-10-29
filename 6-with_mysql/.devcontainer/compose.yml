@@ -1,0 +1,19 @@
+services:
+  mysql:
+    image: mysql:9.5.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: mysql_user
+      MYSQL_PASSWORD: mysql_password
+      MYSQL_DATABASE: app
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspace:cached
+      # uvのキャッシュを永続化
+      - ~/.cache/devcontainer/python/uv-cache:/var/uv/cache:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"

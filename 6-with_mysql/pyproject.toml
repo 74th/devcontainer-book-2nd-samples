@@ -1,0 +1,11 @@
+[project]
+name = "workspace"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "cryptography>=46.0.3",
+    "pymysql>=1.1.2",
+    "pytest>=8.4.2",
+]

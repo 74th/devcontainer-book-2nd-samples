@@ -1,0 +1,20 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspace:cached
+      # uvのキャッシュを永続化
+      - ~/.cache/devcontainer/python/uv-cache:/var/uv/cache:cached
+      # nodejsのキャッシュを永続化
+      # npm
+      - ~/.cache/devcontainer/node/npm-cache:/home/vscode/.npm:cached
+      - ~/.cache/devcontainer/node/npm-config:/home/vscode/.config/npm:cached
+      # node-gyp / node-pre-gyp
+      - ~/.cache/devcontainer/node/node-gyp:/home/vscode/.cache/node-gyp:cached
+      - ~/.cache/devcontainer/node/node-pre-gyp:/home/vscode/.cache/node-pre-gyp:cached
+      # pnpm
+      - ~/.cache/devcontainer/node/pnpm-store:/home/vscode/.local/share/pnpm/store:cached
+
+    command: /bin/sh -c "while sleep 1000; do :; done"

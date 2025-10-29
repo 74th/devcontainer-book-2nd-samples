@@ -15,6 +15,6 @@ services:
       - ~/.cache/devcontainer/node/node-gyp:/home/vscode/.cache/node-gyp:cached
       - ~/.cache/devcontainer/node/node-pre-gyp:/home/vscode/.cache/node-pre-gyp:cached
       # pnpm
-      - ~/.cache/devcontainer/node/pnpm-store:/home/vscode/.local/share/pnpm/store:cached
+      - ~/.cache/devcontainer/node/pnpm-store:/home/vscode/.pnpm-store:cached
 
     command: /bin/sh -c "while sleep 1000; do :; done"

@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: app_password
+      POSTGRES_DB: app
+      POSTGRES_INITDB_ARGS: "-E UTF8"
+
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspace:cached
+      # uvのキャッシュを永続化
+      - ~/.cache/devcontainer/python/uv-cache:/var/uv/cache:cached
+    # 必要なら dev から DB へ名前解決できるよう 'postgres' を使う
+    environment:
+      DATABASE_URL: postgresql://app_user:app_password@postgres:5432/app
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: app_password
+      POSTGRES_DB: app
+    command: /bin/sh -c "while sleep 1000; do :; done"

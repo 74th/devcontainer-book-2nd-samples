@@ -1,6 +1,6 @@
 # 同人誌『DevContainer実践ガイド』サンプルコード
 
-<img src="./material/ebook.png" alt="DevContainer実践ガイド表紙" width="200"/>
+<img src="./material/ebook.png" alt="DevContainer実践ガイド表紙" width="600"/>
 
 このリポジトリは技術書典19にては [@74th](https://github.com/74th) が頒布した同人誌『DevContainer実践ガイド』のサンプルコードを収録しています。
 

@@ -8,6 +8,9 @@
     "source=${localEnv:HOME}/.llm/copilot/.copilot,target=/home/node/.copilot,type=bind,consistency=cached",
     "source=${localEnv:HOME}/.llm/copilot/.config/configstore,target=/home/node/.config/configstore,type=bind,consistency=cached"
   ],
+  "remoteEnv": {
+    "PATH": "/home/vscode/npm/bin:${containerEnv:PATH}"
+  },
   "customizations": {
     "vscode": {
       "extensions": []

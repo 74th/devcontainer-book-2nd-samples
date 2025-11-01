@@ -8,6 +8,9 @@
     "source=${localEnv:HOME}/.llm/gemini/.gemini,target=/home/vscode/.gemini,type=bind,consistency=cached",
     "source=${localEnv:HOME}/.llm/gemini/.config/configstore,target=/home/vscode/.config/configstore,type=bind,consistency=cached"
   ],
+  "remoteEnv": {
+    "PATH": "/home/vscode/npm/bin:${containerEnv:PATH}"
+  },
   "customizations": {
     "vscode": {
       "extensions": [

@@ -7,6 +7,9 @@
     "source=${localEnv:HOME}/.llm/codex/.codex,target=/home/vscode/.codex,type=bind,consistency=cached"
   ],
   "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+  "remoteEnv": {
+    "PATH": "/home/vscode/npm/bin:${containerEnv:PATH}"
+  },
   "customizations": {
     "vscode": {
       "extensions": [

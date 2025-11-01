@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"github.com/74th/devcontainer-book-2nd-samples/4-golang_with_devcontainer_official_image/src/domain/entity"
+	"github.com/74th/devcontainer-book-2nd-samples/6.1-golang_with_devcontainer_official_image/src/domain/entity"
 )
 
 // タスクデータベース

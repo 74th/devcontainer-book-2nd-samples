@@ -3,9 +3,9 @@ package memdb_test
 import (
 	"testing"
 
-	"github.com/74th/devcontainer-book-2nd-samples/4-golang_with_language_official_image/src/domain/entity"
-	"github.com/74th/devcontainer-book-2nd-samples/4-golang_with_language_official_image/src/domain/usecase"
-	"github.com/74th/devcontainer-book-2nd-samples/4-golang_with_language_official_image/src/memdb"
+	"github.com/74th/devcontainer-book-2nd-samples/6.1-golang_with_language_official_image/src/domain/entity"
+	"github.com/74th/devcontainer-book-2nd-samples/6.1-golang_with_language_official_image/src/domain/usecase"
+	"github.com/74th/devcontainer-book-2nd-samples/6.1-golang_with_language_official_image/src/memdb"
 )
 
 func TestNew(t *testing.T) {

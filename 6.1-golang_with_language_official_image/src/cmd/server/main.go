@@ -4,7 +4,7 @@ import (
 	"flag"
 	"os"
 
-	"github.com/74th/devcontainer-book-2nd-samples/4-golang_with_language_official_image/src/server"
+	"github.com/74th/devcontainer-book-2nd-samples/6.1-golang_with_language_official_image/src/server"
 )
 
 func main() {
